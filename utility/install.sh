@@ -1,3 +1,10 @@
+# Install Redis
+
+sudo apt update
+sudo apt install redis
+
+# Install gcloud
+
 echo "Downloading File, it may take a minute or two"
 filename=google-cloud-sdk
 sdk_link='https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-304.0.0-linux-x86.tar.gz'
