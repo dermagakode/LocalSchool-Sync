@@ -2,3 +2,9 @@ local-school.json
 google-cloud-sdk
 google-cloud-sdk/*
 teaching-materials/*
+.env
+
+.DS_Store
+__pycache__/
+.vscode
+.vscode/*

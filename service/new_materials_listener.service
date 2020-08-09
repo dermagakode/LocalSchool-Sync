@@ -1,0 +1,12 @@
+[Unit]
+Description=MQTT Listener for New Teaching Materials
+
+[Service]
+User=pi
+WorkingDirectory=/home/pi/sync
+ExecStart=python3 main.py
+Restart=on-failure
+RestartSec=5s
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,12 @@
+[Unit]
+Description=Celery Worker
+
+[Service]
+User=pi
+WorkingDirectory=/home/pi/sync
+ExecStart=celery -A sync_new_materials worker -l info
+Restart=on-failure
+RestartSec=5s
+
+[Install]
+WantedBy=multi-user.target
