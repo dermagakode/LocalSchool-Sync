@@ -17,9 +17,12 @@ def on_connect(client, userdata, flags, rc):
         print(f'Subscribing to: {MQTT_UPDATE_TOPIC} with mid: {result[1]}')
 
         try:
-            with open("/home/pi/registered_user") as file:
-                # should read all line and subscribe it 
-                pass 
+            with open("/home/pi/school_list") as file:
+                for line in file:
+                    new_topic = f'ntm/{line.strip()}'
+                    print(new_topic)
+                    new_topic = f'{MQTT_TOPIC_PREFIX}/{new_topic}' if MQTT_TOPIC_PREFIX else new_topic
+                    client.subscribe(new_topic)
         except FileNotFoundError as e:
             print(e)
         except Exception as e:
