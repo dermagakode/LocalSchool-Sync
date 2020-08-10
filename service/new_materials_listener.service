@@ -5,6 +5,7 @@ Description=MQTT Listener for New Teaching Materials
 User=pi
 WorkingDirectory=/home/pi/sync
 ExecStart=python3 main.py
+Environment=PYTHONUNBUFFERED=1
 Restart=on-failure
 RestartSec=5s
 

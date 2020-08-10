@@ -5,6 +5,7 @@ Description=Celery Worker
 User=pi
 WorkingDirectory=/home/pi/sync
 ExecStart=celery -A sync_new_materials worker -l info
+Environment=PYTHONUNBUFFERED=1
 Restart=on-failure
 RestartSec=5s
 
