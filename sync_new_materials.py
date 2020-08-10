@@ -32,4 +32,5 @@ def sync(school, grade):
     print(f'syncing {teaching_materials}...')
 
     run(f'mkdir -p "/home/pi/teaching_materials/{teaching_materials}"') # folder must be exist
-    return run(f'gsutil rsync -d -r "gs://teaching-materials/{teaching_materials}" "/home/pi/teaching_materials/{teaching_materials}/"')
+    gsutil = os.path.join(os.getcwd(), 'google-cloud-sdk/bin/gsutil')
+    return run(f'{gsutil} rsync -d -r "gs://teaching-materials/{teaching_materials}" "/home/pi/teaching_materials/{teaching_materials}/"')
