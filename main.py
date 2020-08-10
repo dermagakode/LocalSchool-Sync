@@ -20,7 +20,6 @@ def on_connect(client, userdata, flags, rc):
             with open("/home/pi/school_list") as file:
                 for line in file:
                     new_topic = f'ntm/{line.strip()}'
-                    print(new_topic)
                     new_topic = f'{MQTT_TOPIC_PREFIX}/{new_topic}' if MQTT_TOPIC_PREFIX else new_topic
                     client.subscribe(new_topic)
         except FileNotFoundError as e:
