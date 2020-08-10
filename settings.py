@@ -13,7 +13,8 @@ def getserial():
     f.close()
   except:
     cpuserial = "ERROR000000000"
- 
+  
+  print(f'Active as device num {cpuserial}')
   return cpuserial
   
 MQTT_HOST=os.getenv('MQTT_HOST')
