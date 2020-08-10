@@ -19,12 +19,10 @@ def run(command):
         return (output.decode('utf-8'), error.decode('utf-8'))
 
     except subprocess.CalledProcessError as e:
-        celery_logger.error(f'Error CMD: {e.output}')
-        raise ValueError(e.output)
+        print(e.output)
 
     except AssertionError as e:
-        celery_logger.error(f'Error CMD: {e.output}')
-        raise ValueError(e)
+        print(e)
 
 @app.task
 def sync(school, grade):
